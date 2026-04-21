@@ -69,5 +69,16 @@ describe('Register Page Validations', () => {
         cy.get('#email').type('kocurkubra@gmail.com');
         cy.get('#password').type('Password123');
         cy.get('button[type="submit"]').should('be.disabled').click();
-})})})})
-;
+
+        it('should display button disabled when surname is invalid', () => {
+          cy.get('#ad').type('Kubra');
+          cy.get('#soyad').type('S');
+          cy.get('#email').type('kocurkubra@gmail.com');
+          cy.get('#password').type('Password123');
+          cy.get('button[type="submit"]').should('be.disabled').click();
+        });
+      });
+    });
+  });
+});
+
